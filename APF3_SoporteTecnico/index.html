@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecHogar Support Perú | Soporte Técnico a Domicilio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/Styles.css" />
+
+  <style>
+    /* Estilos adicionales para la landing page */
+    .landing-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(900px 500px at 50% 30%, #1b2a57 0%, #0b1220 70%);
+    }
+
+    .landing-logo {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 16px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50%       { transform: scale(1.08); opacity: 1; }
+    }
+
+    .landing-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .landing-subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .landing-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .badge {
+      background: rgba(124, 92, 255, 0.12);
+      border: 1px solid rgba(124, 92, 255, 0.35);
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+    }
+
+    .landing-nav-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 820px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .nav-card {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(124, 92, 255, 0.2);
+    }
+
+    .nav-card i {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    .nav-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .nav-card p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .nav-card .card-arrow {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .landing-footer {
+      margin-top: 48px;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .landing-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 560px) {
+      .landing-nav-cards {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+      }
+      .landing-title { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="landing-hero">
+
+    <!-- LOGO ANIMADO -->
+    <div class="landing-logo">
+      <i class="fa-solid fa-house-laptop"></i>
+    </div>
+
+    <!-- TÍTULO Y SUBTÍTULO -->
+    <h1 class="landing-title">TecHogar Support Perú</h1>
+    <p class="landing-subtitle">
+      Soporte técnico profesional a domicilio en Lima Metropolitana.
+      Diagnóstico claro, precios transparentes y garantía en cada servicio.
+    </p>
+
+    <!-- BADGES DE BENEFICIOS -->
+    <div class="landing-badges">
+      <span class="badge"><i class="fa-solid fa-check"></i> Garantía 30 días</span>
+      <span class="badge"><i class="fa-solid fa-bolt"></i> Atención en el día</span>
+      <span class="badge"><i class="fa-solid fa-shield-halved"></i> Técnicos certificados</span>
+      <span class="badge"><i class="fa-solid fa-tag"></i> Precios transparentes</span>
+    </div>
+
+    <!-- TARJETAS DE NAVEGACIÓN -->
+    <div class="landing-nav-cards">
+
+      <a href="Servicio.html" class="nav-card">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Servicios y Reserva</h3>
+        <p>Explora nuestros servicios técnicos y agenda una visita.</p>
+        <span class="card-arrow">Ir ahora <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="quienes-somos.html" class="nav-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>¿Quiénes Somos?</h3>
+        <p>Conoce nuestro equipo, misión y valores como empresa.</p>
+        <span class="card-arrow">Conocernos <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="Registro.html" class="nav-card">
+        <i class="fa-solid fa-file-lines"></i>
+        <h3>Mi Reserva</h3>
+        <p>Consulta el estado de tu última solicitud registrada.</p>
+        <span class="card-arrow">Ver reserva <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="landing-footer">
+    <p>© 2026 TecHogar Support Perú &nbsp;|&nbsp;
+      <a href="mailto:contacto@techogarsupport.pe">contacto@techogarsupport.pe</a>
+      &nbsp;|&nbsp;
+      <a href="https://wa.me/51937144754" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> +51 937 144 754
+      </a>
+    </p>
+  </footer>
+
+</body>
+</html>

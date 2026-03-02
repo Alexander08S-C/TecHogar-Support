@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecHogar Support Perú | Soporte Técnico a Domicilio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/Styles.css" />
+</head>
+
+<body>
+
+  <!--HEADER   -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1><i class="fa-solid fa-house-laptop"></i> TecHogar Support Perú</h1>
+        <p>Soporte Técnico a Domicilio | Atención rápida y con garantía</p>
+      </div>
+
+      <!-- Botón hamburguesa -->
+      <button id="btnHamburguesa" class="hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="#servicios"><i class="fa-solid fa-screwdriver-wrench"></i> Servicios</a>
+        <a href="#datos"><i class="fa-solid fa-table"></i> Datos</a>
+        <a href="#multimedia"><i class="fa-solid fa-photo-film"></i> Multimedia</a>
+        <a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MODAL DE INFORMACIÓN  -->
+  <div id="modalInfo" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal__caja">
+      <button id="btnCerrarModal" class="modal__cerrar" aria-label="Cerrar modal">&times;</button>
+      <h3 id="modalTitulo"><i class="fa-solid fa-circle-info"></i> ¿Por qué elegirnos?</h3>
+      <ul class="modal__lista">
+        <li>✅Técnicos certificados con experiencia comprobada</li>
+        <li>✅Garantía de 30 días en todos los servicios</li>
+        <li>✅Diagnóstico sin costo adicional</li>
+        <li>✅Precios transparentes sin sorpresas</li>
+        <li>✅Atención en el día (sujeto a disponibilidad)</li>
+      </ul>
+      <button class="btn primary"
+        onclick="document.getElementById('modalInfo').classList.remove('modal--visible'); document.body.style.overflow='';">
+        Entendido
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-text">
+        <h2><i class="fa-solid fa-laptop-code"></i> Solucionamos problemas de PC, laptop y red en tu hogar u oficina</h2>
+        <p>
+          Atención en Lima Metropolitana. Diagnóstico claro, precios transparentes y
+          recomendaciones para mejorar el rendimiento de tu equipo.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contacto">
+            <i class="fa-solid fa-calendar-check"></i> Solicitar visita
+          </a>
+          <a class="btn ghost" href="#datos">
+            <i class="fa-solid fa-clock"></i> Ver horarios
+          </a>
+          <a class="btn ghost" href="mailto:contacto@techogarsupport.pe">
+            <i class="fa-solid fa-paper-plane"></i> Escribir correo
+          </a>
+          <!-- Botón que abre el MODAL -->
+          <button class="btn ghost" id="btnAbrirModal">
+            <i class="fa-solid fa-circle-info"></i> ¿Por qué elegirnos?
+          </button>
+        </div>
+
+        <div class="contact-bar">
+          <div class="contact-item">
+            <span class="contact-label">
+              <i class="fa-solid fa-envelope"></i> Correo:
+            </span>
+            <a class="contact-link" href="mailto:contacto@techogarsupport.pe">
+              contacto@techogarsupport.pe
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp:
+            </span>
+            <a class="contact-link" href="https://wa.me/51937144754" target="_blank" rel="noopener">
+              +51 937 144 754
+            </a>
+          </div>
+        </div>
+
+        <ul class="highlights">
+          <li>✅Diagnóstico y optimización</li>
+          <li>✅Instalación de software y drivers</li>
+          <li>✅Configuración de Wi-Fi y redes</li>
+          <li>✅Mantenimiento preventivo</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+        <img src="img/banner.jpg" alt="Técnico brindando soporte a una laptop" />
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section">
+      <div class="section-title">
+        <h3><i class="fa-solid fa-list-check"></i> Servicios</h3>
+        <p>Pasa el cursor sobre cada servicio para resaltarlo. Elige el que necesitas en el formulario.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h4><i class="fa-solid fa-toolbox"></i> Mantenimiento Preventivo</h4>
+          <p>Limpieza interna (según evaluación), optimización y recomendaciones.</p>
+          <span class="tag">Desde S/ 60</span>
+        </article>
+
+        <article class="card">
+          <h4><i class="fa-solid fa-desktop"></i> Formateo + Instalación</h4>
+          <p>Windows, drivers y programas básicos. Copia de seguridad opcional.</p>
+          <span class="tag">Desde S/ 120</span>
+        </article>
+
+        <article class="card">
+          <h4><i class="fa-solid fa-wifi"></i> Redes y Wi-Fi</h4>
+          <p>Configuración de router, repetidores, mejora de señal y seguridad básica.</p>
+          <span class="tag">Desde S/ 80</span>
+        </article>
+
+        <article class="card">
+          <h4><i class="fa-solid fa-headset"></i> Soporte Remoto</h4>
+          <p>Asistencia rápida por videollamada o control remoto (según caso).</p>
+          <span class="tag">Desde S/ 40</span>
+        </article>
+
+        <article class="card">
+          <h4><i class="fa-solid fa-shield-virus"></i> Seguridad Básica</h4>
+          <p>Antivirus, limpieza de malware y buenas prácticas de protección.</p>
+          <span class="tag">Desde S/ 70</span>
+        </article>
+
+        <article class="card">
+          <h4><i class="fa-solid fa-gauge-high"></i> Optimización de Rendimiento</h4>
+          <p>Mejora de arranque, limpieza de sistema y revisión de espacio.</p>
+          <span class="tag">Desde S/ 50</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- DATOS -->
+    <section id="datos" class="section">
+      <div class="section-title">
+        <h3><i class="fa-solid fa-calendar-days"></i> Datos (Horarios y Zonas)</h3>
+        <p>Tabla con horarios y cobertura.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Día</th>
+              <th colspan="2">Horario</th>
+              <th rowspan="2">Zonas (referencial)</th>
+            </tr>
+            <tr>
+              <th>Mañana</th>
+              <th>Tarde</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Lunes</td>
+              <td>8:00 - 12:00</td>
+              <td>14:00 - 18:00</td>
+              <td>San Juan de Lurigancho, Ate, Santa Anita</td>
+            </tr>
+            <tr>
+              <td>Martes</td>
+              <td>8:00 - 12:00</td>
+              <td>14:00 - 18:00</td>
+              <td>Los Olivos, SMP, Comas</td>
+            </tr>
+            <tr>
+              <td>Miércoles</td>
+              <td colspan="2">Atención solo por cita</td>
+              <td>Miraflores, Surco, San Borja</td>
+            </tr>
+            <tr>
+              <td>Jueves</td>
+              <td>8:00 - 12:00</td>
+              <td>14:00 - 18:00</td>
+              <td>Breña, Jesús María, Lince</td>
+            </tr>
+            <tr>
+              <td>Viernes</td>
+              <td>8:00 - 12:00</td>
+              <td>14:00 - 18:00</td>
+              <td>Cercado, La Victoria, San Miguel</td>
+            </tr>
+            <tr>
+              <td>Sábado</td>
+              <td>9:00 - 13:00</td>
+              <td>—</td>
+              <td>Según disponibilidad</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <strong>Contacto rápido:</strong>
+        <a class="contact-link" href="mailto:contacto@techogarsupport.pe">contacto@techogarsupport.pe</a>
+        <span class="sep">|</span>
+        <a class="contact-link" href="https://wa.me/51955842317" target="_blank" rel="noopener">WhatsApp +51 955 842 317</a>
+      </div>
+    </section>
+
+    <!-- MULTIMEDIA -->
+    <section id="multimedia" class="section">
+      <div class="section-title">
+        <h3>Multimedia</h3>
+        <p>Imágenes y video relacionados al servicio ofrecido.</p>
+      </div>
+
+      <div class="media-grid">
+        <figure class="media-item">
+          <img src="img/tecnico.jpg" alt="Técnico revisando una PC de escritorio" />
+          <figcaption>Revisión y diagnóstico en el domicilio</figcaption>
+        </figure>
+
+        <div class="media-item video">
+          <iframe
+           src="https://www.youtube.com/embed/vYDiP9zqM_4"
+           title="Video informativo"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           allowfullscreen>
+          </iframe>
+          <p class="caption">Video informativo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="section-title">
+        <h3>Contacto</h3>
+        <p>Completa tus datos para coordinar una visita.</p>
+      </div>
+
+      <!-- action="#" para que app.js capture el submit -->
+      <form class="form" action="#" method="post">
+        <div class="grid">
+          <label>
+            Nombre completo
+            <input type="text" name="nombre" placeholder="Ej. Edgard Pinarez" required />
+          </label>
+
+          <label>
+            Correo
+            <input type="email" name="correo" placeholder="ejemplo@correo.com" />
+          </label>
+
+          <label>
+            Celular
+            <input type="tel" name="celular" placeholder="999999999" required />
+          </label>
+
+          <label>
+            Distrito
+            <select name="distrito" required>
+              <option value="" selected disabled>Selecciona un distrito</option>
+              <option>San Juan de Lurigancho</option>
+              <option>Ate</option>
+              <option>Santa Anita</option>
+              <option>Los Olivos</option>
+              <option>San Martín de Porres</option>
+              <option>Comas</option>
+              <option>Miraflores</option>
+              <option>Surco</option>
+              <option>San Borja</option>
+              <option>La Molina</option>
+              <option>San Isidro</option>
+              <option>Barranco</option>
+              <option>Chorrillos</option>
+              <option>Breña</option>
+              <option>Jesús María</option>
+              <option>Lince</option>
+              <option>Cercado de Lima</option>
+              <option>La Victoria</option>
+              <option>San Miguel</option>
+              <option>Pueblo Libre</option>
+              <option>Magdalena</option>
+              <option>Rímac</option>
+              <option>Independencia</option>
+              <option>Carabayllo</option>
+              <option>Puente Piedra</option>
+              <option>Villa El Salvador</option>
+              <option>Villa María del Triunfo</option>
+              <option>San Juan de Miraflores</option>
+              <option>El Agustino</option>
+              <option>Callao</option>
+              <option>Otro</option>
+            </select>
+            <!--AJS inyecta aquí el día de cobertura al seleccionar -->
+            <span id="infoZona" style="display:none; font-size:0.85rem; color:var(--accent-2); margin-top:4px;"></span>
+          </label>
+
+          <label>
+            Fecha preferida
+            <input type="date" name="fecha" required />
+          </label>
+
+          <label>
+            Hora preferida
+            <input type="time" name="hora" required />
+          </label>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>Tipo de atención</legend>
+          <label class="radio">
+            <input type="radio" name="tipo" value="domicilio" required />
+            Domicilio
+          </label>
+          <label class="radio">
+            <input type="radio" name="tipo" value="remoto" />
+            Remoto
+          </label>
+        </fieldset>
+
+        <label>
+          Servicio principal
+          <select name="servicio" required>
+            <option value="" selected disabled>Elige un servicio</option>
+            <option>Mantenimiento preventivo</option>
+            <option>Formateo + instalación</option>
+            <option>Redes y Wi-Fi</option>
+            <option>Soporte remoto</option>
+            <option>Seguridad básica (antivirus/malware)</option>
+            <option>Optimización de rendimiento</option>
+          </select>
+        </label>
+
+        <label>
+          Mensaje (describe el problema)
+          <textarea name="mensaje" rows="5" placeholder="Ej.: Mi laptop está lenta, se apaga, no agarra Wi-Fi..."></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Enviar solicitud
+          </button>
+          <button class="btn ghost" type="reset">Limpiar</button>
+        </div>
+        <!--el JS crea aquí dinámicamente el contador de solicitudes -->
+
+        <div class="form-foot">
+          <p><strong>Empresa:</strong> TecHogar Support Perú</p>
+          <p><strong>Correo:</strong> <a class="contact-link" href="mailto:contacto@techogarsupport.pe">contacto@techogarsupport.pe</a></p>
+          <p><strong>WhatsApp:</strong> <a class="contact-link" href="https://wa.me/51955842317" target="_blank" rel="noopener">+51 955 842 317</a></p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 TecHogar Support Perú</p>
+      <p class="small">Correo: <a class="contact-link" href="mailto:contacto@techogarsupport.pe">contacto@techogarsupport.pe</a> | WhatsApp: <a class="contact-link" href="https://wa.me/51955842317" target="_blank" rel="noopener">+51 955 842 317</a></p>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

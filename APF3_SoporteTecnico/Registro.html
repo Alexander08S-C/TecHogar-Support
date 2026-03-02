@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserva registrada | TecHogar Support Perú</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:      #1a6dff;
+      --brand-dark: #0f4dc2;
+      --green:      #22c55e;
+      --whats:      #25d366;
+      --whats-dark: #1da851;
+      --bg:         #f0f4ff;
+      --card:       #ffffff;
+      --text:       #1e293b;
+      --muted:      #64748b;
+      --radius:     14px;
+      --shadow:     0 8px 30px rgba(26,109,255,.12);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .success-header {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon { font-size: 28px; color: var(--brand); }
+    .brand-text strong { display: block; font-size: 1rem; font-weight: 700; color: var(--text); }
+    .brand-text span { font-size: .75rem; color: var(--muted); }
+
+    .btn-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg);
+      color: var(--brand);
+      border: 1.5px solid var(--brand);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-header:hover { background: var(--brand); color: #fff; }
+
+    .successPage {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+
+    .successCard {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+    }
+
+    @media (max-width: 640px) {
+      .successCard { grid-template-columns: 1fr; }
+      .successLeft  { display: none; }
+    }
+
+    .successLeft {
+      background: linear-gradient(160deg, #1a6dff 0%, #0f4dc2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      gap: 20px;
+    }
+
+    .successLeft-icon { font-size: 64px; color: #fff; opacity: .9; }
+
+    .successLeft-tagline {
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .successLeft-tagline strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .successRight {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    @media (max-width: 640px) { .successRight { padding: 28px 20px; } }
+
+    .statusHeader { display: flex; align-items: center; gap: 12px; }
+    .checkIcon { font-size: 28px; }
+    .successTitle { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .successText { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    .successActions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s, background .2s;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn--whats {
+      background: var(--whats);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,211,102,.35);
+    }
+
+    .btn--whats:hover {
+      background: var(--whats-dark);
+      box-shadow: 0 6px 20px rgba(37,211,102,.45);
+    }
+
+    .btn--white {
+      background: var(--bg);
+      color: var(--brand);
+      border: 1.5px solid #c7d7ff;
+    }
+
+    .btn--white:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+
+    .successInfo {
+      background: #f0f4ff;
+      border-left: 4px solid var(--brand);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .successInfo p { color: var(--text); margin-bottom: 2px; }
+
+    .successSteps h3,
+    .detailsSection h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .stepsList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stepsList li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    .stepsList li::before {
+      content: '';
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stepsList li:nth-child(1)::before { content: '1'; }
+    .stepsList li:nth-child(2)::before { content: '2'; }
+    .stepsList li:nth-child(3)::before { content: '3'; }
+    .stepsList li:nth-child(4)::before { content: '4'; }
+
+    .detailsSection { border-top: 1px solid #e2e8f0; padding-top: 18px; }
+
+    .detailList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .detailList li {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .84rem;
+      padding: 8px 12px;
+      background: #f8faff;
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
+
+    .detail-label { font-weight: 600; color: var(--muted); min-width: 80px; }
+    .detail-value { color: var(--text); text-align: right; flex: 1; }
+
+    .detail-value.estado {
+      background: #fef9c3;
+      color: #854d0e;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: .78rem;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .8rem;
+      color: var(--muted);
+      border-top: 1px solid #e2e8f0;
+      background: #fff;
+    }
+
+    .site-footer a { color: var(--brand); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="success-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-house-laptop"></i></span>
+      <div class="brand-text">
+        <strong>TecHogar Support Perú</strong>
+        <span>Soporte Técnico a Domicilio</span>
+      </div>
+    </div>
+    <a href="Servicio.html" class="btn-header">
+      <i class="fa-solid fa-arrow-left"></i> Volver
+    </a>
+  </div>
+</header>
+
+<main class="successPage">
+  <div class="successCard">
+
+    <div class="successLeft">
+      <div class="successLeft-icon">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+      </div>
+      <div class="successLeft-tagline">
+        <strong>¡Solicitud recibida!</strong>
+        Confirma tu reserva por WhatsApp y coordinaremos la visita técnica.
+      </div>
+    </div>
+
+    <div class="successRight">
+
+      <div class="statusHeader">
+        <span class="checkIcon">✅</span>
+        <h1 class="successTitle">Reserva registrada</h1>
+      </div>
+
+      <p class="successText">
+        Hemos guardado tu solicitud correctamente.
+        Ahora envíanos el mensaje por WhatsApp para confirmarla y coordinar tu visita técnica.
+      </p>
+
+      <div class="successActions">
+        <a id="btnWhatsapp" href="#" class="btn btn--whats">
+          <i class="fa-brands fa-whatsapp"></i> Confirmar por WhatsApp
+        </a>
+        <a href="Servicio.html" class="btn btn--white">
+          <i class="fa-solid fa-house"></i> Volver al formulario
+        </a>
+      </div>
+
+      <div class="successInfo">
+        <p><strong>Horario de atención:</strong> Lunes a Viernes 8:00 am – 6:00 pm | Sábado 9:00 am – 1:00 pm</p>
+        <small>Te responderemos en breve para confirmar la visita.</small>
+      </div>
+
+      <div class="successSteps">
+        <h3><i class="fa-solid fa-list-check"></i> Próximos pasos</h3>
+        <ul class="stepsList">
+          <li>Confirma tu reserva enviando el mensaje por WhatsApp.</li>
+          <li>Coordinamos hora exacta y dirección contigo.</li>
+          <li>El técnico llega puntual y preparado.</li>
+          <li>Diagnóstico, solución y garantía del servicio.</li>
+        </ul>
+      </div>
+
+      <div class="detailsSection">
+        <h3><i class="fa-solid fa-file-lines"></i> Detalles de tu reserva</h3>
+        <ul id="detalleReserva" class="detailList">
+          <!-- app.js inyecta los datos aquí -->
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 TecHogar Support Perú &nbsp;|&nbsp;
+     <a href="mailto:contacto@techogarsupport.pe">contacto@techogarsupport.pe</a> &nbsp;|&nbsp;
+     <a href="https://wa.me/937144754" target="_blank" rel="noopener">WhatsApp +51 937 144 754</a>
+  </p>
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
